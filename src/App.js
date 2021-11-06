@@ -1,6 +1,5 @@
 import { Nav } from "./components/Nav"
-// import SignIn from "./components/SignIn"
-// import { SignUp } from "./components/SignUp"
+
 import { Footer } from "./components/Footer"
 import { GlobalStyle } from "./styles/GlobalStyles"
 import { MainContainer } from "./styles/MainContainer"
@@ -12,9 +11,9 @@ export default function App() {
       <GlobalStyle />
 
       <Nav />
+
       <Routes />
-      {/* <SignIn />
-      <SignUp /> */}
+
       <Footer />
     </MainContainer>
   )
