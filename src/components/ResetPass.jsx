@@ -1,10 +1,10 @@
 import { Card, StyledLink } from "../styles/Card"
-import { Container } from "../styles/Container"
+import { ResetContainer } from "../styles/Container"
 import { Input } from "../styles/Form.styled"
 import { Button } from "../styles/Button"
 export const ResetPass = () => {
   return (
-    <Container>
+    <ResetContainer>
       <Card>
         <h2 style={{ marginBottom: "0" }}>Forgot Password</h2>
         <p
@@ -25,6 +25,6 @@ export const ResetPass = () => {
           </p>
         </StyledLink>
       </Card>
-    </Container>
+    </ResetContainer>
   )
 }

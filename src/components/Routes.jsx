@@ -8,7 +8,10 @@ export const Routes = () => {
     <>
       <Switch>
         <Route exact path="/">
-          <Redirect from="/" to="/signIn" />
+          <Redirect from="/" to="/react_authentication_app" />
+        </Route>
+        <Route path="/react_authentication_app">
+          <Redirect from="/react_authentication_app" to="/signIn" />
         </Route>
         <Route path="/signIn">
           <SignIn />
