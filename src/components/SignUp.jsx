@@ -27,7 +27,7 @@ export const SignUp = () => {
             CREATE AN ACCOUNT
           </Button>
         </form>
-        <StyledLink to="/react_authentication_app/signIn">
+        <StyledLink to="/signIn">
           <p>
             Have an account? <span>Sign in</span>
           </p>

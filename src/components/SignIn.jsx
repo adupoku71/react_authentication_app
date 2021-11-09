@@ -22,12 +22,12 @@ export const SignIn = () => {
             SIGN IN
           </Button>
         </form>
-        <StyledLink to="/react_authentication_app/reset_password">
+        <StyledLink to="/reset_password">
           <p style={{ marginBottom: "20px" }}>
             <span>Forgot password ?</span>
           </p>
         </StyledLink>
-        <Link to="/react_authentication_app/signUp">
+        <Link to="/signUp">
           <Button>CREATE AN ACCOUNT</Button>
         </Link>
       </Card>
