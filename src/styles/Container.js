@@ -6,6 +6,12 @@ export const Container = styled.div`
   justify-content: center;
   /* background: coral; */
   width: 100%;
-  min-height: 400px;
-  padding: 20px 0;
+  /* min-height: 400px; */
+  padding: 40px 0;
+  flex-grow: 1;
+`
+export const ResetContainer = styled(Container)`
+  @media screen and (max-width: 450px) {
+    padding: 20px 0;
+  }
 `

@@ -10,7 +10,8 @@ export const Card = styled.div`
   /* box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
     rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; */
   background: #fff;
-  margin: 20px auto 20px;
+  /* margin: 20px auto 20px; */
+  /* margin: auto 0; */
   h2 {
     margin-bottom: 1.2rem;
   }
@@ -24,6 +25,17 @@ export const Card = styled.div`
       text-decoration: underline;
       color: lightblue;
       margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    width: 90%;
+    padding: 20px;
+    p {
+      font-size: 11px;
+    }
+    h2 {
+      font-size: 25px;
+      padding-bottom: 13px;
     }
   }
 `

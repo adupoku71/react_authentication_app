@@ -27,7 +27,7 @@ export const SignUp = () => {
             CREATE AN ACCOUNT
           </Button>
         </form>
-        <StyledLink to="/">
+        <StyledLink to="/signIn">
           <p>
             Have an account? <span>Sign in</span>
           </p>
