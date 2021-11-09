@@ -7,22 +7,19 @@ export const Routes = () => {
   return (
     <>
       <Switch>
-        <Route exact path="/">
-          <Redirect from="/" to="/react_authentication_app" />
+        <Route exact path={["/", "/react_authentication_app"]}>
+          <Redirect from="/" to="/react_authentication_app/signIn" />
         </Route>
-        <Route path="/react_authentication_app">
-          <Redirect from="/react_authentication_app" to="/signIn" />
-        </Route>
-        <Route path="/signIn">
+        <Route path="/react_authentication_app/signIn">
           <SignIn />
         </Route>
-        <Route path="/signUp">
+        <Route path="/react_authentication_app/signUp">
           <SignUp />
         </Route>
-        <Route path="/reset_password">
+        <Route path="/react_authentication_app/reset_password">
           <ResetPass />
         </Route>
-        <Route path="/dashboard">
+        <Route path="/react_authentication_app/dashboard">
           <DashBoard />
         </Route>
       </Switch>

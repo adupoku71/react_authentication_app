@@ -19,7 +19,7 @@ export const ResetPass = () => {
             RESET MY PASSWORD
           </Button>
         </form>
-        <StyledLink to="/signIn">
+        <StyledLink to="/react_authentication_app/signIn">
           <p style={{ color: "lightblue" }}>
             Return to <span>Sign In</span>
           </p>
