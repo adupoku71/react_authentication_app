@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react_authentication_app/static/js/main.bf2194b4.chunk.js",
-    "main.js.map": "/react_authentication_app/static/js/main.bf2194b4.chunk.js.map",
+    "main.js": "/react_authentication_app/static/js/main.d33e7425.chunk.js",
+    "main.js.map": "/react_authentication_app/static/js/main.d33e7425.chunk.js.map",
     "runtime-main.js": "/react_authentication_app/static/js/runtime-main.c576d5f2.js",
     "runtime-main.js.map": "/react_authentication_app/static/js/runtime-main.c576d5f2.js.map",
     "static/js/2.8a57964e.chunk.js": "/react_authentication_app/static/js/2.8a57964e.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.c576d5f2.js",
     "static/js/2.8a57964e.chunk.js",
-    "static/js/main.bf2194b4.chunk.js"
+    "static/js/main.d33e7425.chunk.js"
   ]
 }
