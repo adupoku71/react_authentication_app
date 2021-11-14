@@ -1,5 +1,6 @@
 import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
+import { RiErrorWarningLine } from "react-icons/ri"
 import { Button } from "../styles/Button"
 import { Card } from "../styles/Card"
 import { Container } from "../styles/Container"
@@ -7,9 +8,13 @@ import { Input } from "../styles/Form.styled"
 import { StyledLink } from "../styles/Card"
 import { Switch, Redirect } from "react-router"
 import { UserContext } from "../context/UserContextProvider"
+import axios from "axios"
+
 export const SignIn = () => {
   const [userData, setUserData] = useState({ email: "", password: "" })
-  const { loggedIn, setLoggedIn } = useContext(UserContext)
+  const { loggedIn, setLoggedIn, setEmail } = useContext(UserContext)
+  const [errors, setErrors] = useState({})
+
   const updateUserData = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value })
   }
@@ -24,42 +29,57 @@ export const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(userData)
-    try {
-      const results = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        body: JSON.stringify(userData),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
+    axios
+      .post(
+        "http://localhost:5000/login",
+        { userData },
+        { withCredentials: true }
+      )
+      .then(({ data }) => {
+        console.log(data)
+        const {
+          user: { email, isLoggedIn },
+        } = data
+        setLoggedIn(isLoggedIn)
+        setEmail(email)
       })
-      const response = await results.json()
-      console.log(response)
-      if (response.user) setLoggedIn(true)
-    } catch (error) {
-      console.log("there was an error", error)
-    }
+      .catch(({ response: { data } }) => {
+        setErrors(data.errors)
+      })
   }
   return (
     <Container>
       <Card>
         <h2>Sign In</h2>
         <form onSubmit={handleSubmit}>
-          <Input
-            onChange={updateUserData}
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-          />
-          <Input
-            onChange={updateUserData}
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-          />
+          <div>
+            <Input
+              onChange={updateUserData}
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Email"
+            />
+            {errors.email && (
+              <span>
+                <RiErrorWarningLine className="ri" /> {errors.email}
+              </span>
+            )}
+          </div>
+          <div>
+            <Input
+              onChange={updateUserData}
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+            {errors.password && (
+              <span>
+                <RiErrorWarningLine className="ri" /> {errors.password}
+              </span>
+            )}
+          </div>
           <Button primary type="submit">
             SIGN IN
           </Button>
@@ -70,7 +90,7 @@ export const SignIn = () => {
           </p>
         </StyledLink>
         <Link to="/signUp">
-          <Button>CREATE AN ACCOUNT</Button>
+          <Button style={{ marginBottom: "0" }}>CREATE AN ACCOUNT</Button>
         </Link>
       </Card>
     </Container>

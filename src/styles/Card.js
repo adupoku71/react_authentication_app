@@ -4,7 +4,7 @@ export const Card = styled.div`
   width: 340px;
   /* min-height: 400px; */
   border-radius: 5px;
-  padding: 40px;
+  padding: 35px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 4px;
   /* box-shadow: rgba(0, 0, 0, 0.15) 0px 1.95px 2.6px; */
   /* box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
@@ -12,6 +12,26 @@ export const Card = styled.div`
   background: #fff;
   /* margin: 20px auto 20px; */
   /* margin: auto 0; */
+
+  div {
+    margin-bottom: 2rem;
+    position: relative;
+    span {
+      display: flex;
+      align-items: center;
+      color: red;
+      /* background: green; */
+      font-size: 13px;
+      position: absolute;
+      left: 0px;
+      bottom: -21px;
+      width: 100%;
+      .ri {
+        margin-right: 3px;
+      }
+    }
+  }
+
   h2 {
     margin-bottom: 1.2rem;
   }
